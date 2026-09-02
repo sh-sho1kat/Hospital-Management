@@ -1,0 +1,19 @@
+package com.example.hospitalmanagement.service;
+
+import com.example.hospitalmanagement.entity.Patient;
+import com.example.hospitalmanagement.repository.PatientRepository;
+import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+
+@Service
+@RequiredArgsConstructor
+public class PatientService {
+    private final PatientRepository patientRepository;
+
+    @Transactional
+    public Patient getPatientById(long id) {
+        Patient p1 = patientRepository.findById(id).orElseThrow();
+        return p1;
+    }
+}
