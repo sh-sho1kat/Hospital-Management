@@ -37,6 +37,6 @@ public class Patient {
     private String gender;
    @Column(name = "bloodgroup_type")
    @Enumerated(EnumType.STRING)
-    private BloodGroupType bloodgroupType;
+    private BloodGroupType bloodGroupType;
 
 }
