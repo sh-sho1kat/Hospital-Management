@@ -63,4 +63,11 @@ public class PatientTest {
         List<Patient> patients = patientRepository.findbyBloodGroup(BloodGroupType.O_POSITIVE);
         System.out.println(patients);
     }
+
+    @Test
+    public void updateName()
+    {
+        int updated = patientRepository.updateName("Shoikat", 1L);
+        System.out.println(updated);
+    }
 }
