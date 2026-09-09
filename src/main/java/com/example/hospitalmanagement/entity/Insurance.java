@@ -4,6 +4,7 @@ package com.example.hospitalmanagement.entity;
 import jakarta.persistence.*;
 import jdk.jfr.Timestamp;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 
@@ -13,6 +14,7 @@ import java.time.LocalDate;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Insurance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +26,7 @@ public class Insurance {
     @Column(nullable = false, length = 50)
     private String provider;
 
-    @Timestamp
+    @CreationTimestamp
     @Column(nullable = false, updatable = false)
     private LocalDate createdAt;
 

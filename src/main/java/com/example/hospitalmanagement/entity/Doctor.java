@@ -4,7 +4,10 @@ package com.example.hospitalmanagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -28,5 +31,8 @@ public class Doctor {
     private String email;
 
     @OneToMany(mappedBy = "doctor")
-    private List<Appoinment> appoinments;
+    private List<Appoinment> appoinments = new ArrayList<>();
+
+    @ManyToMany(mappedBy = "doctors")
+    private Set<Department> departments =  new HashSet<>();
 }
