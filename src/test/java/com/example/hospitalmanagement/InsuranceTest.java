@@ -25,4 +25,9 @@ public class InsuranceTest {
                 .build();
         insuranceService.createInsuranceForPatient(insurance,1L);
     }
+    @Test
+    public void disAssociateInsurance()
+    {
+        insuranceService.disAssociateInsurance(1L);
+    }
 }

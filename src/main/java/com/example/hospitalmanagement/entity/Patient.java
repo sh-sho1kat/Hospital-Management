@@ -45,7 +45,7 @@ public class Patient {
 //   @Column(updatable = false)
 //   private LocalDate createdAt;
 
-   @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+   @OneToOne(cascade = {CascadeType.ALL}, orphanRemoval = true)
    @JoinColumn(name = "insurance_id") //Owning Side
    private Insurance insurance;
 
